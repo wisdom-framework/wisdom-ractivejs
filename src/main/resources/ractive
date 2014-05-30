@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+// args[0] contains ractive module path
+// args[1] contains the template file path
+// args[2] contains the javascript output file path
+
+var args = process.argv.slice(2);
+
+var path = require('path'),
+    fs = require('fs'),
+    Ractive = require(args[0]);
+
+var template = fs.readFileSync(args[1],{encoding : "utf8"});
+var parsed = Ractive.parse(template);
+var content = "Ractive.templates."+ path.basename(args[1],path.extname(args[1])) + " = " + JSON.stringify(parsed)+";";
+
+fs.writeFileSync(args[2],content,{encoding : "utf8"});
