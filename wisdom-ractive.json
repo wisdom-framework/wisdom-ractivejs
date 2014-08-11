@@ -1,0 +1,22 @@
+{
+    "name": "wisdom-ractive.js",
+    "version":"0.1-SNAPSHOT",
+    "description": "A maven plugin based on the wisdom framework which parses Ractive.js template into JavaScript during the compile phase.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wisdom-framework/wisdom-ractivejs"
+    },
+
+    "author": "The Wisdom Team",
+    "license": {
+            "type": "Apache",
+            "url": "https://github.com/wisdom-framework/wisdom-ractivejs/blob/master/LICENSE"
+        },
+    "homepage": "https://github.com/wisdom-framework/wisdom-ractivejs",
+    "keywords": [
+        "dom manipulation",
+        "templates",
+        "ui"
+    ]
+}
+
