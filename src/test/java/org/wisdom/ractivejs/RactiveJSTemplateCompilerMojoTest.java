@@ -59,7 +59,7 @@ public class RactiveJSTemplateCompilerMojoTest {
         nodeDirectory = new File("target/test/node");
         nodeDirectory.mkdirs();
         Log log = new SystemStreamLog();
-        NodeManager manager = new NodeManager(log, nodeDirectory);
+        NodeManager manager = new NodeManager(log, nodeDirectory,mojo);
         manager.installIfNotInstalled();
         mojo = new RactiveJsTemplateCompilerMojo();
         mojo.basedir = new File(FAKE_PROJECT);

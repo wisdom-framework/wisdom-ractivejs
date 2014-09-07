@@ -29,7 +29,6 @@ import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.PumpStreamHandler;
 import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
@@ -80,7 +79,7 @@ public class RactiveJsTemplateCompilerMojo extends AbstractWisdomWatcherMojo imp
      *
      * @see <a href="https://www.npmjs.org/">NPM Web Site</a>.
      */
-    @Parameter(defaultValue = "0.5.5")
+    @Parameter(defaultValue = "0.5.6")
     String ractiveJsVersion;
 
 
@@ -90,10 +89,9 @@ public class RactiveJsTemplateCompilerMojo extends AbstractWisdomWatcherMojo imp
      * Parse all ractive template available in the assets and resources assets directories.
      *
      * @throws MojoExecutionException
-     * @throws MojoFailureException
      */
     @Override
-    public void execute() throws MojoExecutionException, MojoFailureException {
+    public void execute() throws MojoExecutionException {
         //Copy ractiveExec to .wisdom folder
         copyScriptInDotWisdom();
 
