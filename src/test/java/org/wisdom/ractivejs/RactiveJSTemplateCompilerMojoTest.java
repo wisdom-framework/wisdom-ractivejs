@@ -17,10 +17,6 @@
  * limitations under the License.
  * #L%
  */
-/*
- * Copyright 2014, Technologic Arts Vietnam.
- * All right reserved.
- */
 
 package org.wisdom.ractivejs;
 
@@ -43,7 +39,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * created: 5/27/14.
  *
- * @author <a href="mailto:jbardin@tech-arts.com">Jonathan M. Bardin</a>
+ * @author barjo 
  */
 public class RactiveJSTemplateCompilerMojoTest {
 

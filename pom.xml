@@ -10,13 +10,42 @@
 
     <artifactId>wisdom-ractivejs-maven-plugin</artifactId>
     <version>0.1-SNAPSHOT</version>
-    <packaging>maven-plugin</packaging>
+		<packaging>maven-plugin</packaging>
+		<name>wisdom-ractivejs-maven-plugin</name>
+		<description>A maven plugin based on the wisdom framework which parse Ractive.js 
+				template into JavaScript during the compile phase.
+		</description>
+
+		<licenses>
+				<license>
+						<name>Apache License 2.0</name>
+						<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+				</license>
+		</licenses>
 
     <properties>
         <!-- should match Wisdom parent -->
         <wisdom.version>0.6.3</wisdom.version>
         <mavenPluginPluginVersion>3.2</mavenPluginPluginVersion>
     </properties>
+
+		<scm>
+				<url>https://github.com/wisdom-framework/wisdom-ractivejs</url>
+				<connection>scm:git:git@github.com:wisdom-framework/wisdom-ractivejs.git</connection>
+				<developerConnection>scm:git:git@github.com:wisdom-framework/wisdom-ractivejs.git</developerConnection>
+		</scm>
+
+		<inceptionYear>2014</inceptionYear>
+
+		<issueManagement>
+				<system>github</system>
+				<url>https://github.com/wisdom-framework/wisdom-ractivejs/issues</url>
+		</issueManagement>
+
+		<organization>
+				<name>Wisdom Framework</name>
+				<url>http://wisdom-framework.org</url>
+		</organization>
 
     <dependencies>
         <dependency>

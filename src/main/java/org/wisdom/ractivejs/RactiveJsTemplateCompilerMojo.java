@@ -17,10 +17,6 @@
  * limitations under the License.
  * #L%
  */
-/*
- * Copyright 2014, Technologic Arts Vietnam.
- * All right reserved.
- */
 
 package org.wisdom.ractivejs;
 
@@ -53,7 +49,7 @@ import static org.wisdom.maven.node.NPM.npm;
  * All '.ract' files from the 'src/main/resources/assets' directory are compiled to 'target/classes/',
  * while the one from 'src/main/assets/' are compiled to 'target/wisdom/assets'.
  *
- * @author <a href="mailto:jbardin@tech-arts.com">Jonathan M. Bardin</a>
+ * @author barjo
  */
 @Mojo(name = "compile-ractivejs", threadSafe = false,
         requiresDependencyResolution = ResolutionScope.COMPILE,
