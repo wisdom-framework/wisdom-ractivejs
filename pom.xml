@@ -9,7 +9,7 @@
   </parent>
 
   <artifactId>wisdom-ractivejs-maven-plugin</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
   <name>wisdom-ractivejs-maven-plugin</name>
   <description>A maven plugin based on the wisdom framework which parse Ractive.js
