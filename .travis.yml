@@ -1,6 +1,19 @@
 language: java
 jdk:
-  - oraclejdk7
+- oraclejdk7
 after_success:
-  - echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USER}</username><password>\${env.OSSRH_PASS}</password></server></servers></settings>" > ~/settings.xml
-  - mvn deploy --settings ~/settings.xml
+- echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USER}</username><password>\${env.OSSRH_PASS}</password></server></servers></settings>"
+  > ~/settings.xml
+- if [ -z ${TRAVIS_TAG} ]; then mvn deploy --settings ~/settings.xml; fi
+before_deploy:
+- mvn package
+- zip -r ${TRAVIS_TAG}.zip target/*.jar
+deploy:
+  provider: releases
+  api_key:
+    secure: XyLxQcS14znfXS6Lylf2YrPkqpCOi13xHLLGB0yhGn5uoqfzbel0gvD/5mhCz12yOnsGZSJIP91WkJM6enjgto+FPYP994Pjvuuqn2hrMFqPDpEcdclB5es6TvJQd2wPj4FzkiBxEeootujF8I7jiMCoLJSl9Xp4peQbsM8s/jo=
+  file: ${TRAVIS_TAG}.zip
+  on:
+    repo: wisdom-framework/wisdom-ractivejs
+    tags: true
+    all_branches: true
