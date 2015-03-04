@@ -27,6 +27,8 @@
 
     <wisdom.version>0.7.0</wisdom.version>
     <mavenPluginPluginVersion>3.3</mavenPluginPluginVersion>
+    <mavenCompilerPlugin>3.2</mavenCompilerPlugin>
+    <disableLint><!--set in jdk8 profile--></disableLint>
   </properties>
 
   <scm>
@@ -115,6 +117,15 @@
             </execution>
           </executions>
         </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${mavenCompilerPlugin}</version>
+          <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+            <proc>none</proc> <!-- Avoid the javax.inject name problem -->
+          </configuration>
+      </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -175,6 +186,15 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>doclint-java8-disable</id>
+      <activation>
+        <jdk>[1.8,)</jdk>
+      </activation>
+      <properties>
+        <disableLint>-Xdoclint:none</disableLint>
+      </properties>
     </profile>
   </profiles>
 
