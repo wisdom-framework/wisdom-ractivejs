@@ -26,7 +26,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <wisdom.version>0.8.0</wisdom.version>
-    <mavenPluginPluginVersion>3.3</mavenPluginPluginVersion>
+    <mavenPluginPluginVersion>3.4</mavenPluginPluginVersion>
     <mavenCompilerPlugin>3.2</mavenCompilerPlugin>
     <disableLint><!--set in jdk8 profile--></disableLint>
   </properties>
