@@ -75,7 +75,7 @@ public class RactiveJsTemplateCompilerMojo extends AbstractWisdomWatcherMojo imp
      *
      * @see <a href="https://www.npmjs.org/">NPM Web Site</a>.
      */
-    @Parameter(defaultValue = "0.7.1")
+    @Parameter(defaultValue = "0.7.3")
     String ractiveJsVersion;
 
 

@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -39,14 +39,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * created: 5/27/14.
  *
- * @author barjo 
+ * @author barjo
  */
 public class RactiveJSTemplateCompilerMojoTest {
 
     public static final String FAKE_PROJECT = "target/test-classes/fake-project";
     public static final String FAKE_PROJECT_TARGET = "target/test-classes/fake-project/target";
     private static final String PARSED_TEMPLATE = "Ractive.templates.view = " +
-                                                  "[{\"t\":7,\"e\":\"h1\",\"f\":[\"Hello \",{\"t\":2,\"r\":\"name\"}]}];";
+                                                  "{\"v\":3,\"t\":[{\"t\":7,\"e\":\"h1\",\"f\":[\"Hello \",{\"t\":2,\"r\":\"name\"}]}]};";
     File nodeDirectory;
     private RactiveJsTemplateCompilerMojo mojo;
 
@@ -61,12 +61,12 @@ public class RactiveJSTemplateCompilerMojoTest {
         mojo.basedir = new File(FAKE_PROJECT);
         mojo.buildDirectory = new File(FAKE_PROJECT_TARGET);
         mojo.buildDirectory.mkdirs();
-        mojo.ractiveJsVersion = "0.4.0";
+        mojo.ractiveJsVersion = "0.7.3";
     }
 
     @After
     public void tearDown(){
-        FileUtils.deleteQuietly(mojo.buildDirectory);
+        //FileUtils.deleteQuietly(mojo.buildDirectory);
     }
 
     @Test
@@ -80,6 +80,7 @@ public class RactiveJSTemplateCompilerMojoTest {
 
         final File link = new File(FAKE_PROJECT_TARGET, "wisdom/assets/view.js");
         assertThat(link).isFile();
+        System.out.println("piff: " + content);
         content = FileUtils.readFileToString(link);
         assertThat(content).isEqualTo(PARSED_TEMPLATE);
     }
